@@ -1,0 +1,59 @@
+# ZongBot Global Configuration
+
+# Application Settings
+app:
+  name: ZongBot
+  version: 0.1.0
+  environment: development
+  log_level: INFO
+
+# Binance Settings
+binance:
+  testnet: false
+  api_timeout: 30
+  request_timeout: 10
+  max_retries: 3
+  retry_delay: 1
+
+# Data Settings
+data:
+  dir: ./data
+  format: parquet
+  compression: snappy
+  historical_limit: 1000  # 每個時間框架最多歷史數據點
+
+# Database Settings
+database:
+  type: sqlite  # sqlite, postgresql, mysql
+  path: ./data/zongbot.db
+  backup_enabled: true
+  backup_interval: 86400  # 24 hours
+
+# HuggingFace Settings
+huggingface:
+  data_repo: caizongxun/zongbot-data
+  model_repo: caizongxun/zongbot-models
+  sync_interval: 3600  # 1 hour
+  auto_push: true
+
+# Model Settings
+model:
+  name: lstm-predictor
+  version: 1.0.0
+  device: cuda  # cuda, cpu
+  batch_size: 32
+  learning_rate: 0.001
+  epochs: 100
+
+# Discord Bot Settings
+discord:
+  prefix: "!"
+  status_update_interval: 300  # 5 minutes
+  signal_cooldown: 300  # Prevent spam
+
+# Logging Settings
+logging:
+  format: json
+  file: ./logs/zongbot.log
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
