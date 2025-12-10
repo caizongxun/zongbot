@@ -1,0 +1,86 @@
+{
+  "technical_indicators": [
+    {
+      "name": "SMA",
+      "type": "moving_average",
+      "periods": [20, 50, 200],
+      "enabled": true
+    },
+    {
+      "name": "EMA",
+      "type": "moving_average",
+      "periods": [12, 26],
+      "enabled": true
+    },
+    {
+      "name": "RSI",
+      "type": "momentum",
+      "period": 14,
+      "enabled": true
+    },
+    {
+      "name": "MACD",
+      "type": "momentum",
+      "fast_period": 12,
+      "slow_period": 26,
+      "signal_period": 9,
+      "enabled": true
+    },
+    {
+      "name": "Bollinger Bands",
+      "type": "volatility",
+      "period": 20,
+      "std_dev": 2,
+      "enabled": true
+    },
+    {
+      "name": "ATR",
+      "type": "volatility",
+      "period": 14,
+      "enabled": true
+    },
+    {
+      "name": "STOCH",
+      "type": "momentum",
+      "k_period": 14,
+      "d_period": 3,
+      "enabled": true
+    },
+    {
+      "name": "CCI",
+      "type": "momentum",
+      "period": 20,
+      "enabled": true
+    },
+    {
+      "name": "OBV",
+      "type": "volume",
+      "enabled": true
+    },
+    {
+      "name": "ADX",
+      "type": "trend",
+      "period": 14,
+      "enabled": true
+    }
+  ],
+  "volatility_metrics": [
+    {
+      "name": "Historical Volatility",
+      "period": 20,
+      "enabled": true
+    },
+    {
+      "name": "Parkinson Volatility",
+      "period": 20,
+      "enabled": true
+    },
+    {
+      "name": "Garman-Klass Volatility",
+      "period": 20,
+      "enabled": true
+    }
+  ],
+  "total_indicators": 13,
+  "description": "15+ technical indicators for feature engineering"
+}
