@@ -1,0 +1,48 @@
+# Core Dependencies
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
+# Data Processing
+pandas==2.0.3
+numpy==1.24.3
+scipy==1.11.1
+
+# Binance API
+binance-connector==3.5.0
+ccxt==4.0.80
+
+# Machine Learning
+torch==2.0.1
+torchvision==0.15.2
+torchmetrics==0.11.4
+
+# HuggingFace
+huggingface-hub==0.17.0
+datasets==2.14.4
+
+# Discord Bot
+discord.py==2.3.1
+
+# Utilities
+requests==2.31.0
+urllib3==2.0.4
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Development
+jupyter==1.0.0
+ipython==8.12.2
+ipykernel==6.25.0
+
+# Testing
+pytest==7.4.0
+pytest-cov==4.1.0
+
+# Code Quality
+black==23.9.1
+flake8==6.0.0
+isort==5.12.0
+mypy==1.5.0
+
+# Logging
+python-json-logger==2.0.7
