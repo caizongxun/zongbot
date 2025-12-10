@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  zongbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zongbot
+    restart: always
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - ENVIRONMENT=production
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - zongbot-network
+
+  # Optional: PostgreSQL for data storage
+  postgres:
+    image: postgres:15-alpine
+    container_name: zongbot-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: zongbot
+      POSTGRES_USER: zongbot
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - zongbot-network
+    profiles:
+      - with-db
+
+  # Optional: Redis for caching
+  redis:
+    image: redis:7-alpine
+    container_name: zongbot-redis
+    restart: always
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - zongbot-network
+    profiles:
+      - with-cache
+
+networks:
+  zongbot-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
