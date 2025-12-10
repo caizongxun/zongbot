@@ -1,0 +1,31 @@
+{
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "ADAUSDT",
+    "DOGEUSDT",
+    "SOLUSDT",
+    "POLYUSDT",
+    "LINKUSDT",
+    "XRPUSDT",
+    "LTCUSDT",
+    "AVAXUSDT",
+    "MATICUSDT",
+    "UNIUSDT",
+    "ATOMUSDT",
+    "FTMUSDT"
+  ],
+  "timeframes": ["15m", "1h", "4h"],
+  "fetch_settings": {
+    "limit": 1000,
+    "interval": 60,
+    "parallel_workers": 5
+  },
+  "excluded_symbols": [],
+  "metadata": {
+    "total_symbols": 15,
+    "last_updated": "2025-12-10",
+    "description": "15 major cryptocurrencies for analysis"
+  }
+}
